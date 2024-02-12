@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Übung</title>
+  </head>
+  <body>
+    <h1>hello world</h1>
+
+    <button>contact me</button>
+    <style>
+      body {
+        text-align: center;
+      }
+      button {
+        padding: 10px;
+        z-index: 1;
+        border: none;
+        border-radius: 5px;
+        position: relative;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: palevioletred;
+        transition: transform 300ms ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left;
+        border-radius: 5px;
+      }
+      button:hover::before,
+      button:focus::before {
+        transform: scaleX(1);
+      }
+      button:hover,
+      button:focus {
+        color: white;
+      }
+    </style>
+  </body>
+</html>
